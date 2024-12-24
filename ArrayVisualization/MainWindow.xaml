@@ -1,0 +1,26 @@
+﻿<Window x:Class="ArrayVisualization.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Array Visualization" Height="500" Width="800"
+        Loaded="Window_Loaded">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+
+        <StackPanel Orientation="Horizontal" Margin="10">
+            <TextBlock Text="Размер массива:" VerticalAlignment="Center" Margin="0,0,10,0"/>
+            <TextBox Name="ArraySizeTextBox" Width="100" Margin="0,0,10,0"/>
+            <Button Content="Сгенерировать" Click="GenerateArrayButton_Click" Margin="0,0,10,0"/>
+        </StackPanel>
+
+        <StackPanel Orientation="Horizontal" Margin="130,0,0,0" Grid.Row="0" HorizontalAlignment="Center">
+            <RadioButton Name="OriginalRadioButton" Content="Первоначальный" Checked="RadioButton_Checked" IsChecked="True" Margin="10"/>
+            <RadioButton Name="EvenRadioButton" Content="Четные" Checked="RadioButton_Checked" Margin="10"/>
+            <RadioButton Name="OddRadioButton" Content="Нечетные" Checked="RadioButton_Checked" Margin="10"/>
+        </StackPanel>
+
+        <Canvas Name="GraphCanvas" Grid.Row="1" Background="White" Margin="10"/>
+    </Grid>
+</Window>
